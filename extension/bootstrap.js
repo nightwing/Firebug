@@ -44,6 +44,8 @@ function startup(params, reason)
     var resourceURI = Services.io.newURI(__SCRIPT_URI_SPEC__ + "/../modules/", null, null);
     res.setSubstitution("firebug", resourceURI);
     res.setSubstitution("moduleloader", resourceURI);
+    resourceURI = Services.io.newURI(__SCRIPT_URI_SPEC__ + "/../content/firebug/", null, null);
+    res.setSubstitution("firebug_rjs", resourceURI);
 
     // Add our chrome registration. not needed for 10+
     Components.manager.addBootstrappedManifestLocation(params.installPath);
@@ -108,6 +110,7 @@ function shutdown(params, reason)
     var res = Services.io.getProtocolHandler("resource").QueryInterface(Ci.nsIResProtocolHandler);
     res.setSubstitution("firebug", null);
     res.setSubstitution("moduleloader", null);
+    res.setSubstitution("firebug_rjs", null);
 }
 
 // ********************************************************************************************* //

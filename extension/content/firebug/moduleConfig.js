@@ -19,11 +19,11 @@ Firebug.getModuleLoaderConfig = function(baseConfig)
     baseConfig.prefDomain = baseConfig.prefDomain || "extensions.firebug";
     baseConfig.baseUrl = baseConfig.baseUrl || "resource://";
     baseConfig.xhtml = true;  // createElementNS used
-    baseConfig.arch = baseConfig.arch || "chrome://firebug/content/bti/inProcess";
+    baseConfig.arch = baseConfig.arch || "firebug_rjs/bti/inProcess";
 
     baseConfig.paths = baseConfig.paths || {
         "arch": baseConfig.arch,
-        "firebug": "chrome://firebug/content"
+        "firebug": "firebug_rjs"
     };
 
     var config = {};
